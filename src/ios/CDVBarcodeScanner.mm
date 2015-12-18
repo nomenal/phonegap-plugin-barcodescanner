@@ -585,8 +585,8 @@ parentViewController:(UIViewController*)parentViewController
     size_t   height      =            CVPixelBufferGetHeight(imageBuffer);
     uint8_t* baseAddress = (uint8_t*) CVPixelBufferGetBaseAddress(imageBuffer);
     
-    // only going to get 90% of the min(width,height) of the captured image
-    size_t    greyWidth  = 9 * MIN(width, height) / 10;
+    // only going to get 33% of the min(width,height) of the captured image
+    size_t    greyWidth  = 3.3 * MIN(width, height) / 10;
     uint8_t*  greyData   = (uint8_t*) malloc(greyWidth * greyWidth);
     
     // remember this pointer so we can free it later
@@ -979,9 +979,9 @@ parentViewController:(UIViewController*)parentViewController
 
 //--------------------------------------------------------------------------
 
-#define RETICLE_SIZE    500.0f
-#define RETICLE_WIDTH    10.0f
-#define RETICLE_OFFSET   60.0f
+#define RETICLE_SIZE    510.0f
+#define RETICLE_WIDTH    4.0f
+#define RETICLE_OFFSET   170.0f
 #define RETICLE_ALPHA     0.4f
 
 //-------------------------------------------------------------------------
